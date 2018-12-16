@@ -1,4 +1,16 @@
 <!--index.wxml-->
 <view class="container">
-  helloWorld chen
+   <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image
+          style="width: 200px; height: 200px; background-color: #eeeeee;"
+          src="{{item}}"
+        ></image>
+        </swiper-item>
+      </block>
+  </swiper>
+  <image src='{{background[0]}}'></image>
 </view>
