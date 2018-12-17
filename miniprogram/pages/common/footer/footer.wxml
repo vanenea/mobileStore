@@ -1,0 +1,28 @@
+<view class="bottom-nav">
+  
+    <view class="active">
+      <navigator src="index.html">
+        <text class="icon-home"></text>
+          <view>有赞</view>
+      </navigator>
+    </view> 
+    <view class="">
+      <navigator src="category.html">
+        <text class="icon-category"></text>
+          <view>分类</view>
+      </navigator>
+    </view> 
+    <view class="">
+      <navigator src="cart.html">
+      <text class="icon-cart"></text>
+      <view>购物车</view>
+      </navigator>
+    </view> 
+    <view class="">
+      <navigator src="member.html">
+        <text class="icon-user"></text>
+        <view>我</view>
+      </navigator>
+    </view>
+  
+  </view>

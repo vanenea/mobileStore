@@ -1,16 +1,61 @@
 <!--index.wxml-->
 <view class="container">
-   <swiper
+   <swiper class='swiper'
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
       <block wx:for="{{background}}" wx:key="*this">
         <swiper-item>
-          <image
-          style="width: 200px; height: 200px; background-color: #eeeeee;"
-          src="{{item}}"
-        ></image>
+          <image style="width: 100%; height: 180px;" src="{{item}}" ></image>
         </swiper-item>
       </block>
   </swiper>
-  <image src='{{background[0]}}'></image>
+  <view class="section-title left">优店推荐</view>
+  <view class="section-content shops">
+    <view class="shop-wrap">
+      <view class="shop-item">
+        <navigator url="goods.html">
+          <image class="fadeIn" src="../../images/250_435.png"></image>
+        </navigator>
+      </view>
+      <view class="shop-item">
+        <navigator url="goods.html">
+          <image class="fadeIn" src="../../images/250_435.png"></image>
+        </navigator>
+      </view>
+      <view class="shop-item">
+        <navigator url="goods.html">
+          <image class="fadeIn" src="../../images/250_435.png"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="line-block line-block-gray">
+    <view class="lineblock-title"><text class="lineblock-font">最热商品推荐</text></view>
+  </view> 
+  <view class="hot-goods js-waterfull-wrap">
+    <view class="js-list js-lazy">
+      <view wx:for="{{goods}}" wx:key="*this" class="goods-list">
+        <view class="goods-item">
+          <navigator url="" class="half">
+            <view class="thumb img-box">
+              <image class="goods-img" src="../../images/320_320.png"></image>
+            </view>
+            <view class="detail">
+              <view class="title">{{item.title }}</view>
+              <view class="price">￥{{item.price}}</view>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tip loading-more"><text></text></view>
+  <view class="tip" style="text-align: center;padding: 0px 0;font-size: 13px;color:#666;margin-bottom: 12px;">
+        没有更多的商品了
+  </view>
+  
+  <view class="js-show-find category-guid" style="display: none;"></view>
+
+  <include src="../common/footer/footer.wxml"/>
 </view>

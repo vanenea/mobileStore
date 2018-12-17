@@ -3,37 +3,29 @@ Page({
     background: ['../../images/79_295.png', '../../images/79_295.png', '../../images/79_295.png'],
     indicatorDots: true,
     vertical: false,
-    autoplay: false,
+    autoplay: true,
     circular: false,
-    interval: 2000,
+    interval: 5000,
     duration: 500,
     previousMargin: 0,
-    nextMargin: 0
-  },
-  changeProperty: function (e) {
-    var propertyName = e.currentTarget.dataset.propertyName
-    var newData = {}
-    newData[propertyName] = e.detail.value
-    this.setData(newData)
-  },
-  changeIndicatorDots: function (e) {
-    this.setData({
-      indicatorDots: !this.data.indicatorDots
-    })
-  },
-  changeAutoplay: function (e) {
-    this.setData({
-      autoplay: !this.data.autoplay
-    })
-  },
-  intervalChange: function (e) {
-    this.setData({
-      interval: e.detail.value
-    })
-  },
-  durationChange: function (e) {
-    this.setData({
-      duration: e.detail.value
-    })
+    nextMargin: 0,
+
+    goods: [
+      {
+        id : "1",
+        title: "测试数据测试数据",
+        price: "78.5"
+      },
+      {
+        id: "2",
+        title: "测试数据测试数据",
+        price: "78.5"
+      },
+      {
+        id: "3",
+        title: "测试数据测试数据",
+        price: "78.5"
+      }
+    ]
   }
 })
