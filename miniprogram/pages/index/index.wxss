@@ -1,4 +1,5 @@
 @import "../common/css/weui.wxss";
+@import "../common/footer/footer.wxss";
 
 /**index.wxss**/
 page {

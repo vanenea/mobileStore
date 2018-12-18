@@ -1,26 +1,34 @@
 <view class="bottom-nav">
   
-    <view class="active">
-      <navigator src="index.html">
-        <text class="icon-home"></text>
-          <view>有赞</view>
+    <view class="{{type=='home'?'active':''}} lf four" bindtap="footerTap" data-type="home">
+      <navigator src="index.html" hover-class="none">
+        <cover-view class="img-wrap">
+          <cover-image src="{{homeImage}}" class="icon"></cover-image>
+        </cover-view>
+        <view>有赞</view>
       </navigator>
     </view> 
-    <view class="">
-      <navigator src="category.html">
-        <text class="icon-category"></text>
-          <view>分类</view>
+    <view class="{{type=='category'?'active':''}} lf four" bindtap="footerTap" data-type="category">
+      <navigator src="category.html" hover-class="none">
+        <cover-view class="img-wrap">
+          <cover-image src="{{categoryImage}}" class="icon"></cover-image>
+        </cover-view>
+        <view>分类</view>
       </navigator>
     </view> 
-    <view class="">
-      <navigator src="cart.html">
-      <text class="icon-cart"></text>
-      <view>购物车</view>
+    <view class="{{type=='cart'?'active':''}} lf four" bindtap="footerTap" data-type="cart">
+      <navigator src="cart.html" hover-class="none">
+        <cover-view class="img-wrap">
+          <cover-image src="{{cartImage}}" class="icon"></cover-image>
+        </cover-view>
+        <view>购物车</view>
       </navigator>
     </view> 
-    <view class="">
-      <navigator src="member.html">
-        <text class="icon-user"></text>
+    <view class="{{type=='me'?'active':''}} lf four" bindtap="footerTap" data-type="me">
+      <navigator src="member.html" hover-class="none">
+        <cover-view class="img-wrap">
+          <cover-image src="{{meImage}}" class="icon"></cover-image>
+        </cover-view>
         <view>我</view>
       </navigator>
     </view>

@@ -4,7 +4,7 @@
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
       <block wx:for="{{background}}" wx:key="*this">
-        <swiper-item>
+        <swiper-item data-id="{{item}}">
           <image style="width: 100%; height: 180px;" src="{{item}}" ></image>
         </swiper-item>
       </block>
@@ -37,7 +37,7 @@
     <view class="js-list js-lazy">
       <view wx:for="{{goods}}" wx:key="*this" class="goods-list">
         <view class="goods-item">
-          <navigator url="" class="half">
+          <navigator url="../detail/detail?id={{item.id}}" class="half">
             <view class="thumb img-box">
               <image class="goods-img" src="../../images/320_320.png"></image>
             </view>
