@@ -5,7 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    background: ['../../images/375_375.png', '../../images/375_375.png', '../../images/375_375.png'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    circular: false,
+    interval: 5000,
+    duration: 500,
+    previousMargin: 0,
+    nextMargin: 0,
+    detail:{
+      "id": "1",
+      "title": "寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-11斤",
+      "price": "10000"
+    }
   },
 
   /**

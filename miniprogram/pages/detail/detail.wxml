@@ -1,2 +1,30 @@
 <!--miniprogram/pages/detail/detail.wxml-->
-<text>miniprogram/pages/detail/detail.wxml</text>
+<view>
+   <swiper class='swiper'
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item class="">
+          <image style="width: 100%; height: 100%;" src="{{item}}" ></image>
+        </swiper-item>
+      </block>
+  </swiper>
+
+  <view class="goods-header">
+    <view class="title">{{ detail.title }}</view>
+    <text class="hide js-add-wish js-wish-animate wish-add font-size-12 tag tag-redf30 pull-right">喜欢</text>
+    <view class="goods-price">
+      <view class="current-price">
+        <text>¥</text>
+        <text class="js-goods-price price">{{ detail.price }}</text>
+      </view>
+      <text class="btn btn-blue btn-retail hide js-retail-btn">门店有售</text>
+      <view class="original-price">{{}}</view>
+    </view>
+    <text class="with-margin-l"></text>
+    <view class="stock-detail">
+      
+    </view>
+  </view>
+
+</view>
