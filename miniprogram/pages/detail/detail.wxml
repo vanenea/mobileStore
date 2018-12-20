@@ -18,6 +18,14 @@
         <text>¥</text>
         <text class="js-goods-price price">{{ detail.price }}</text>
       </view>
+      <view class="renzheng block-item">
+        <text class="js-rz-item-alert rz-item">
+          <text class="rz-name font-size-12 c-gray-darker">企业认证</text>
+        </text>
+        <text class="js-rz-item-alert rz-item">
+          <text class="rz-name font-size-12 c-gray-darker">担保交易</text>
+        </text>
+      </view>
       <view class="original-price">{{detail.originalPrice}}</view>
     </view>
     <text class="with-margin-l"></text>
@@ -31,8 +39,9 @@
   <view class="sku-detail adv-opts">
     <view class="sku-detail-inner adv-opts-inner">
       <view class="sku-group select-sku js-select-sku">
-        <view><text class="js-sku-label">选择</text>：</view>
-        <view class="js-sku-value"><text class="sku-item">净含量</text></view>
+        <view class="select">
+          <text class="js-sku-label">选择： 净含量</text>
+        </view>
       </view>
     </view>
   </view>
