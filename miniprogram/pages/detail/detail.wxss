@@ -45,3 +45,38 @@ page {
 .current-price .price {
     font-size: 18px;
 }
+.original-price {
+    font-size: 12px;
+    margin: 5px 0 10px;
+    display: block;
+    text-decoration-line: line-through;
+}
+.old-price, .original-price {
+    vertical-align: middle;
+    color: #999;
+    text-decoration: line-through;
+}
+.stock-detail {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-size: 12px;
+  zoom: 1;
+  color: #999;
+  padding: 0px 10px;
+}
+.threePart{
+  float: left;
+  width: 33.33%;
+}
+.tl {
+  text-align: left;
+}
+.tc {
+  text-align: center;
+}
+.tr {
+  padding-left: 0px;
+  text-align: center;
+}

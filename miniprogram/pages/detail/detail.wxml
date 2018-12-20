@@ -12,18 +12,28 @@
 
   <view class="goods-header">
     <view class="title">{{ detail.title }}</view>
-    <text class="hide js-add-wish js-wish-animate wish-add font-size-12 tag tag-redf30 pull-right">喜欢</text>
+    <!-- <text class="hide js-add-wish js-wish-animate wish-add font-size-12 tag tag-redf30 pull-right">喜欢</text> -->
     <view class="goods-price">
       <view class="current-price">
         <text>¥</text>
         <text class="js-goods-price price">{{ detail.price }}</text>
       </view>
-      <text class="btn btn-blue btn-retail hide js-retail-btn">门店有售</text>
-      <view class="original-price">{{}}</view>
+      <view class="original-price">{{detail.originalPrice}}</view>
     </view>
     <text class="with-margin-l"></text>
     <view class="stock-detail">
-      
+      <view class="threePart tl">运费：{{detail.postage}}</view>
+      <view class="threePart tc">剩余:{{detail.remain}}</view>
+      <view class="threePart tr">销量：{{detail.sales}}</view>
+    </view>
+  </view>
+
+  <view class="sku-detail adv-opts">
+    <view class="sku-detail-inner adv-opts-inner">
+      <view class="sku-group select-sku js-select-sku">
+        <view><text class="js-sku-label">选择</text>：</view>
+        <view class="js-sku-value"><text class="sku-item">净含量</text></view>
+      </view>
     </view>
   </view>
 

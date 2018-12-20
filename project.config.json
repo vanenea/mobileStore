@@ -12,6 +12,7 @@
 	"appid": "wx86169c7952296e11",
 	"projectname": "mobileStore",
 	"libVersion": "2.4.2",
+	"compileType": "miniprogram",
 	"condition": {
 		"search": {
 			"current": -1,
