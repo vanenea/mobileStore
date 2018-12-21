@@ -22,7 +22,8 @@ Page({
       "postage": "免运费",
       "remain":"450",
       "sales":"50"
-    }
+    },
+    bsnType: "detail"
   },
 
   /**
@@ -79,5 +80,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 商品详情
+   */
+  itemDetail: function(){
+    if (this.bsnType!="detail"){
+      this.setData({
+        bsnType: "detail"
+
+      })
+    }
+
+  },
+
+  /**
+   * 本店成交
+   */
+  deal: function(){
+    if (this.bsnType != "deal") {
+      this.setData({
+        bsnType: "deal"
+
+      })
+    }
   }
 })

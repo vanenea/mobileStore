@@ -10,7 +10,9 @@ page {
   width: 100%;
   height: 375px;
 }
-
+.clear {
+  clear: both;
+}
 .goods-header {
   display: block;
   height: auto;
@@ -36,12 +38,14 @@ page {
 }
 .goods-price {
     padding: 10px 10px 2px;
-    text-align: left;
+    width: 100%;
 }
 .current-price {
     color: #f60;
     display: inline-block;
     font-size: 14px;
+    float: left;
+    width: 50%;
 }
 .current-price .price {
     font-size: 18px;
@@ -51,6 +55,7 @@ page {
     margin: 5px 0 10px;
     display: block;
     text-decoration-line: line-through;
+    
 }
 .old-price, .original-price {
     vertical-align: middle;
@@ -117,15 +122,34 @@ page {
 .renzheng{
   color: #666;
   font-size: 12px;
+  float: right;
+  width: 50%;
 }
-.rz-item::before {
-  content: "";
+.icon-right {
   position: absolute;
-  top: 50%;
-  right: 0;
-  margin-top: -6px;
-  width: 6px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAArhJREFUSA3dljFoU0EYx/8vSdOKdHSwuHUR6ugoQmNTCAVNd5eOOggOFTdxK3YQBF27uCkYhRJotAVxdFRwcZMujiKkNcn5/1/ed7k8k/QpkqE3vLt3932//33v7r57wGkvSZ4Aawe40OniBm3XHLDIeiH1OyTgK9u7pSJeN5fxLe0fW00UrH4guI2HcNigUHEshQMEdfnYwRwetK7gcJztWMHqPq67Hp5TbJ6gXzRsOIdGOcHHs8U+8GcXC8cOl5MEdU6oTtsZ2v5ICrjZquDNKNGRgqtvcYfwx4QUCHtVSrDZvOY/3SiG76u9w2LHYZt+64T26Hd3bwVPsg5/CKaRNRIHx8H7e1VsZ50mva+2sMmJbnmbItazkQ4Jas1cG1/0GQvAvb8Vs4lItAc88p93DhfjNSU3Kv0NMq/P+K9ioslXDL/+YkYlCGrr02BDG0RrFtnkatbe49xKC7fM2DPIEtOz04EgqHOmrc9v3DhpgxjUaol1jrDP92cmKoZYYqZn2JsHQb6tqUdb34/kfJgYwZco8GlmFi/NNWJ5tvqDIB2UQaBzpjpP8WLHODCx0iwqzav4br7GMrb6gyDbPl3ZoTYnnsnbAtu71UHMYUmRZcVkF7EsFQ4JGivUEus5PO0wilg0j5ggR8o7mRJH6POf0pXZFMt4we39mWuxZKJDYhwbFZn5d9o4n7ZDbg2CnIqyPpQbzUHrUSpjORaVsCbgPyPH4jUzP6uNZWz1B0G2d9VBeF21layoFzshMvONWJ6t/iCo+4wz6XJH1ZWIzUl1LKpoFfWkyOQjhlhiiq0+lSDoL0/dZ7xilPX7w4OnBJIzqOQRk5dn9K+rnfhi5gQGZerJW1ldlydnwdOALWX9wXTytex6EsNfxJnbfyhCQ071AjbRqf5iBNFp/kSZqOr/+ZsYc09n+zcFilpmjjvmggAAAABJRU5ErkJggg==);
-    background-size: 6px 12px;
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+}
+.secondPart {
+  width: 50%;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  border: 0 none;
+  outline: 0 none;
+  background-color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 14px;
+}
+.active {
+    color: #f44;
+    border-bottom: 1px solid #f44;
+}
+.image-detail {
+  width: 100%;
 }

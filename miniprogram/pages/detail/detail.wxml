@@ -20,12 +20,15 @@
       </view>
       <view class="renzheng block-item">
         <text class="js-rz-item-alert rz-item">
-          <text class="rz-name font-size-12 c-gray-darker">企业认证</text>
+          <text class="icon-right"></text>
+          <text class="rz-name font-size-12 c-gray-darker" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;企业认证&nbsp;&nbsp;&nbsp;</text>
         </text>
         <text class="js-rz-item-alert rz-item">
-          <text class="rz-name font-size-12 c-gray-darker">担保交易</text>
+          <text class="icon-right"></text>
+          <text class="rz-name font-size-12 c-gray-darker" decode="true"> &nbsp;&nbsp;&nbsp;担保交易</text>
         </text>
       </view>
+      <view class="clear"></view>
       <view class="original-price">{{detail.originalPrice}}</view>
     </view>
     <text class="with-margin-l"></text>
@@ -41,6 +44,37 @@
       <view class="sku-group select-sku js-select-sku">
         <view class="select">
           <text class="js-sku-label">选择： 净含量</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+<!-- 商品详情 -->
+  <view class="js-detail-container" style="margin-top: 10px;">
+    <view class="js-tabber-container goods-detail">
+      <view class="js-tabber tabber tabber-n2 clearfix orange">
+        <view class="secondPart {{bsnType=='detail'?'active':''}}" bindtap="itemDetail">商品详情</view>
+        <view class="secondPart {{bsnType=='deal'?'active':''}}" bindtap="deal">本店成交</view>
+      </view>
+      <view class="js-tabber-content">
+        <view class="js-part" wx:if="{{bsnType=='deal'}}">
+          <view class="js-traderecord-list block-list-traderecord">
+            <view class="list-header">
+              <text class="col-1">买家</text>
+              <text class="col-2 center">成交时间</text> 
+              <text class="col-3 center">数量</text>
+            </view>
+            <view class="js-list b-list block block-list" wx:if="{{bsnType=='detail'}}">
+              <view  class="block-item">
+                <text class="col-1 c-gray-darker">{{ item.buyer }}</text> 
+                <text class="col-2 c-gray-darker center">{{ item.time }}</text>
+                <text class="col-3 c-gray-darker center">{{ item.num }}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="js-part js-goods-detail goods-tabber-c">
+          <image class="image-detail"  wx:for="{{background}}" wx:key="*this" src="{{item}}"></image>
         </view>
       </view>
     </view>
