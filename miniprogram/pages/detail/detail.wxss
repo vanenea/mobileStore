@@ -13,6 +13,9 @@ page {
 .clear {
   clear: both;
 }
+.orange {
+  margin-bottom: 18px;
+}
 .goods-header {
   display: block;
   height: auto;
@@ -147,9 +150,48 @@ page {
   font-size: 14px;
 }
 .active {
-    color: #f44;
-    border-bottom: 1px solid #f44;
+  color: #f44;
+  border-bottom: 1px solid #f44;
 }
 .image-detail {
   width: 100%;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+}
+.c-img {
+    width: 68px;
+    height: 68px;
+    display: inline-block;
+    margin-right: 3px;
+    overflow: hidden;
+    text-align: center;
+    background: #f3f3f3;
+    margin-bottom: 1px;
+}
+.comment-container{
+  font-size: 12px;
+  word-break: break-all;
+  padding: 10px 10px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+.user {
+  color: #999;
+}
+.cmt-user {
+ display: block;
+ float: left;
+}
+.date {
+ display: block;
+ float: right;
+}
+.comment {
+  margin: 5px 0;
+}
+.c-img {
+  min-width: 68px;
+  max-height: 68px;
+
 }

@@ -54,27 +54,25 @@
     <view class="js-tabber-container goods-detail">
       <view class="js-tabber tabber tabber-n2 clearfix orange">
         <view class="secondPart {{bsnType=='detail'?'active':''}}" bindtap="itemDetail">商品详情</view>
-        <view class="secondPart {{bsnType=='deal'?'active':''}}" bindtap="deal">本店成交</view>
+        <view class="secondPart {{bsnType=='deal'?'active':''}}" bindtap="deal">商品评价</view>
+        <view class="clear"></view>
       </view>
       <view class="js-tabber-content">
-        <view class="js-part" wx:if="{{bsnType=='deal'}}">
-          <view class="js-traderecord-list block-list-traderecord">
-            <view class="list-header">
-              <text class="col-1">买家</text>
-              <text class="col-2 center">成交时间</text> 
-              <text class="col-3 center">数量</text>
+        <view class="js-part" hidden="{{bsnType=='detail'}}">
+          <view class="comment-container" wx:for="{{comment}}" wx:key="*this">
+            <view class="user">
+              <text class="cmt-user">{{item.buyer}}</text>
+              <text class="date">{{item.date}}</text>
             </view>
-            <view class="js-list b-list block block-list" wx:if="{{bsnType=='detail'}}">
-              <view  class="block-item">
-                <text class="col-1 c-gray-darker">{{ item.buyer }}</text> 
-                <text class="col-2 c-gray-darker center">{{ item.time }}</text>
-                <text class="col-3 c-gray-darker center">{{ item.num }}</text>
-              </view>
+            <view class="clear"></view>
+            <view class="comment">{{item.comment}}</view>
+            <view class="comment-img">
+              <image class="c-img" wx:for="{{item.image}}" wx:key="ii" src="{{ii}}" bindtap="previewImage({{item}},{{item.image}})"></image>
             </view>
           </view>
         </view>
-        <view class="js-part js-goods-detail goods-tabber-c">
-          <image class="image-detail"  wx:for="{{background}}" wx:key="*this" src="{{item}}"></image>
+        <view class="js-part js-goods-detail goods-tabber-c" hidden="{{bsnType=='deal'}}">
+          <image class="image-detail"  wx:for="{{background}}" wx:key="*this" src="{{item}}" mode="widthFix"></image>
         </view>
       </view>
     </view>
