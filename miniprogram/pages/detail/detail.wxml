@@ -78,4 +78,8 @@
     </view>
   </view>
 
+  <!-- 模态框 -->
+  <view class="sku popup">
+
+  </view>
 </view>
