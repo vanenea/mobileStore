@@ -4,7 +4,7 @@
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
       <block wx:for="{{background}}" wx:key="*this">
-        <swiper-item class="">
+        <swiper-item class="" bindtap="previewImage" data-imgSrc="{{item}}" data-imgSrcs="{{background}}">
           <image style="width: 100%; height: 100%;" src="{{item}}" ></image>
         </swiper-item>
       </block>
@@ -67,7 +67,7 @@
             <view class="clear"></view>
             <view class="comment">{{comItem.comment}}</view>
             <view class="comment-img">
-              <image class="c-img" data-imgSrc="{{imgItem}}" data-imgSrcs="{{comItem.image}}" wx:for="{{comItem.image}}" wx:for-item="imgItem" wx:key="this" src="{{imgItem}}"           bindtap="previewImage"></image>
+              <image class="c-img" data-imgSrc="{{imgItem}}" data-imgSrcs="{{comItem.image}}" wx:for="{{comItem.image}}" wx:for-item="imgItem" wx:key="this" src="{{imgItem}}" bindtap="previewImage"></image>
             </view>
           </view>
         </view>
