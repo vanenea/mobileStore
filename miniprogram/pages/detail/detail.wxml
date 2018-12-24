@@ -59,15 +59,15 @@
       </view>
       <view class="js-tabber-content">
         <view class="js-part" hidden="{{bsnType=='detail'}}">
-          <view class="comment-container" wx:for="{{comment}}" wx:key="*this">
+          <view class="comment-container" wx:for="{{comment}}" wx:for-item="comItem" wx:key="*">
             <view class="user">
-              <text class="cmt-user">{{item.buyer}}</text>
-              <text class="date">{{item.date}}</text>
+              <text class="cmt-user">{{comItem.buyer}}</text>
+              <text class="date">{{comItem.date}}</text>
             </view>
             <view class="clear"></view>
-            <view class="comment">{{item.comment}}</view>
+            <view class="comment">{{comItem.comment}}</view>
             <view class="comment-img">
-              <image class="c-img" wx:for="{{item.image}}" wx:key="ii" src="{{ii}}" bindtap="previewImage({{item}},{{item.image}})"></image>
+              <image class="c-img" data-imgSrc="{{imgItem}}" data-imgSrcs="{{comItem.image}}" wx:for="{{comItem.image}}" wx:for-item="imgItem" wx:key="this" src="{{imgItem}}"           bindtap="previewImage"></image>
             </view>
           </view>
         </view>
