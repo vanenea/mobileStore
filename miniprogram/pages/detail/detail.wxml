@@ -42,7 +42,7 @@
   <view class="sku-detail adv-opts">
     <view class="sku-detail-inner adv-opts-inner">
       <view class="sku-group select-sku js-select-sku">
-        <view class="select">
+        <view class="select" bindtap="showModal">
           <text class="js-sku-label">选择： 净含量</text>
         </view>
       </view>
@@ -79,7 +79,8 @@
   </view>
 
   <!-- 模态框 -->
-  <view class="sku popup">
-
+  <view class="sku" wx:if="{{showModalStatus}}">
+    <view class="commodity_screen" >helloword</view>
+    <view animation="{{animationData}}" class="commodity_attr_box"></view>
   </view>
 </view>
