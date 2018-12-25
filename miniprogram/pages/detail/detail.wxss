@@ -195,11 +195,66 @@ page {
   max-height: 68px;
 
 }
-
-.sku{
+.sku {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1000;
+}
+.sku-layout-title {
+  overflow: hidden;
   position: fixed;
+  z-index: 1002;
+  background: white;
   bottom: 0px;
+  left: 0px;
+  right: 0px;
+  padding: 10px 10px;
+}
+.thumb{
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+.js-goods-thumb {
   width: 100%;
-  height: 30%;
-  background-color: #666;
+  height: 100%;
+}
+
+.sku-layout-title .goods-base-info .title {
+  padding-right: 52px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 22px;
+}
+.sku-layout-title .goods-base-info {
+  margin-left: 60px;
+}
+.ellipsis {
+  display: block;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.current-price.pull-left{
+  font-size: 14px;
+}
+.sku-cancel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+}
+.cancel-img {
+  height: 22px;
+  width: 22px;
+  background-image: url(https://www.chenlaoshi.top/upload/images/icon_close.png);
+  background-size: 22px 22px;
+}
+.sku-layout-title {
+  border-bottom: 2px solid #e5e5e5;
 }
