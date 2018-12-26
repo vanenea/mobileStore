@@ -23,6 +23,7 @@ Page({
       "remain":"450",
       "sales":"50"
     },
+    sku:["120g","150g","200g"],
     comment: [
       {
         "buyer": "陈****",
@@ -44,9 +45,7 @@ Page({
         ]
 
       }
-    ]
-
-    ,
+    ],
     bsnType: "detail"
   },
 
