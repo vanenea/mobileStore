@@ -263,6 +263,9 @@ page {
 
 .sku-sel-list-o{
   font-size: 13px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
 }
 .sku-sel-title{
   margin:7px;
@@ -285,4 +288,7 @@ page {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.buyCount {
+  font-size: 13px;
 }

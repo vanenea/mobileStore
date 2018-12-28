@@ -23,7 +23,8 @@ Page({
       "remain":"450",
       "sales":"50"
     },
-    sku:["120g","150g","200g"],
+    sku: ["120g","150g","200g"],
+    skuIndex: 0,
     comment: [
       {
         "buyer": "陈****",
@@ -183,6 +184,12 @@ Page({
         showModalStatus: false
       })
     }.bind(this), 200)
+  },
+  /**选择sku */
+  selectSku: function(event){
+    this.setData({
+      skuIndex: event.currentTarget.dataset.index
+    })
   }
 
 
