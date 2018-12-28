@@ -109,7 +109,12 @@
       <view class="buyCount">
         <view>
           <text>购买数量</text>
+          <view class="quantity rf">
+            <button type="button" class="sub" size="mini">-</button> 
+            <input type="text" class="txt"></input>
+            <button type="button" class="plus" size="mini">+</button> 
           
+          </view>
         </view>
       </view>
     </view>

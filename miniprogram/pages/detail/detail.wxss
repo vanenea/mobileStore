@@ -292,3 +292,15 @@ page {
 .buyCount {
   font-size: 13px;
 }
+.rf {
+  /* //float: right; */
+}
+.sub,.plus{
+  text-align: center;
+}
+.txt {
+  border: 2px solid #F8F8F8;
+  /* display: inline; */
+  width: 40px;
+  height: 29px;
+}
