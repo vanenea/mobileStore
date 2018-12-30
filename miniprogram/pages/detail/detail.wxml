@@ -103,23 +103,31 @@
       
       <view class="sku-sel-list-o">
         <view class="sku-sel-title ">规格</view>
-        <text class="sku-sel-list {{index==skuIndex?'sku-selected':''}}" bindtap="selectSku" wx:key="*this" data-index="{{index}}" wx:for="{{sku}}">{{item}}{{index}}</text>
+        <text class="sku-sel-list {{index==skuIndex?'sku-selected':''}}" bindtap="selectSku" wx:key="*this" data-index="{{index}}" wx:for="{{sku}}">{{item}}</text>
       </view>
 
       <view class="buyCount">
         <view>
-          <text>购买数量</text>
-          <view class="quantity rf">
-            <button type="button" class="sub" size="mini">-</button> 
-            <input type="text" class="txt"></input>
-            <button type="button" class="plus" size="mini">+</button> 
-          
+          <view class="lf" style="line-height: 28px;">购买数量:</view>
+          <view class="stepper">
+            <!-- 减号 -->
+            <text class="{{minusStatus}}" bindtap="bindMinus"> - </text>
+            <!-- 数值 -->
+            <input type="number" bindchange="bindManual" value="{{num}}" disabled="true"/>
+            <!-- 加号 -->
+            <text class="normal" bindtap="bindPlus"> + </text>
           </view>
+          <view>剩余： {{moRemain}}</view>
+        
         </view>
       </view>
-    </view>
 
-    
+      <view class="bottom">
+        <button class="cart lf">加入购物车</button>
+        <button class="buy lf">立即购买</button>
+      </view>
+
+    </view>
 
   </view>
 </view>

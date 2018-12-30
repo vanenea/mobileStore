@@ -6,6 +6,9 @@ page {
   padding: 0px;
   color: #333;
 }
+.lf {
+  float: left;
+}
 .swiper{
   width: 100%;
   height: 375px;
@@ -196,7 +199,7 @@ page {
 
 }
 .modal-top{
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   border-bottom: 1px solid #e5e5e5;
   padding-bottom:10px;
 }
@@ -212,12 +215,11 @@ page {
 .sku-layout-title {
   overflow: hidden;
   position: fixed;
-  z-index: 1002;
-  background: white;
   bottom: 0px;
+  z-index: 1002;
+  background: #f8f8f8;
   left: 0px;
   right: 0px;
-  padding: 10px 10px;
 }
 .thumb{
   width: 50px;
@@ -264,8 +266,8 @@ page {
 .sku-sel-list-o{
   font-size: 13px;
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 5px;
   padding-bottom: 10px;
+  background-color: #FFF;
 }
 .sku-sel-title{
   margin:7px;
@@ -293,7 +295,7 @@ page {
   font-size: 13px;
 }
 .rf {
-  /* //float: right; */
+ float: right;
 }
 .sub,.plus{
   text-align: center;
@@ -303,4 +305,66 @@ page {
   /* display: inline; */
   width: 40px;
   height: 29px;
+}
+/*主容器*/
+.stepper {
+	width: 80px;
+	height: 26px;
+	/*给主容器设一个边框*/
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	margin:0 auto;
+}
+ 
+/*加号和减号*/
+.stepper text {
+	width: 19px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+
+/*数值*/
+.stepper input {
+	width: 40px;
+	height: 26px;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+	/*给中间的input设置左右边框即可*/
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+ 
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+ 
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}
+.buyCount,.modal-top {
+  padding: 10px 10px;
+  background-color: #fff;
+}
+.bottom{
+  color: #fff;
+  width: 100%;
+  float: left;
+  
+}
+.buyCount {
+  margin-bottom: 10px;
+  border-bottom:1px solid #e5e5e5;
+}
+.cart{
+  background: #f85;
+  width: 50%;
+}
+.buy{
+  background: #f44;
+  width: 50%;
 }

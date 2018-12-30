@@ -52,7 +52,7 @@ Page({
   },
   detail(event){
     wx.redirectTo({
-      url: '../detail/detail'
+      url: '../detail/detail?id=' + event.currentTarget.dataset.id
 
     })
   }

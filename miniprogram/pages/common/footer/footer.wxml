@@ -1,7 +1,7 @@
 <view class="bottom-nav">
   
     <view class="{{type=='home'?'active':''}} lf four" bindtap="footerTap" data-type="home">
-      <navigator src="index.html" hover-class="none">
+      <navigator url="/pages/index/index" hover-class="none" open-type="navigate">
         <cover-view class="img-wrap">
           <cover-image src="{{homeImage}}" class="icon"></cover-image>
         </cover-view>
@@ -9,7 +9,7 @@
       </navigator>
     </view> 
     <view class="{{type=='category'?'active':''}} lf four" bindtap="footerTap" data-type="category">
-      <navigator src="category.html" hover-class="none">
+      <navigator url="/pages/category/category" hover-class="none" open-type="navigate">
         <cover-view class="img-wrap">
           <cover-image src="{{categoryImage}}" class="icon"></cover-image>
         </cover-view>
