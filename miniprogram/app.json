@@ -10,5 +10,23 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "debug": true,
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/detail/detail",
+        "text": "详情"
+      }
+    ],
+    "selectedColor": "#ee8618"
   }
 }

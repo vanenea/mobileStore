@@ -35,13 +35,16 @@ Page({
   },
   footerTap(event){
     this.type = event.currentTarget.dataset.type;
+    var page = "";
     if(this.type=="home"){
+      page = "/pages/index/index";
       this.setData({
         type : this.type,
         homeImage : "../../../images/like_a.png",
         categoryImage : "../../../images/category.png"
       });
-    } else if (event.currentTarget.dataset.type == "category"){
+    } else if (this.type == "category"){
+      page = "/pages/category/category";
       this.setData({
         type: this.type,
         homeImage : "../../../images/like.png",
@@ -49,6 +52,12 @@ Page({
 
       })
     }
+    wx.navigateTo({
+      url: page,
+      success: function(res){
+        console.log(res);
+      }
+    })
   },
   detail(event){
     wx.redirectTo({
