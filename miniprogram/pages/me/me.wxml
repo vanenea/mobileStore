@@ -1,1 +1,1 @@
-<button open-type="getUserInfo"> sadfasd </button>
+<button open-type="getUserInfo" bindgetuserinfo="getUserInfo"> sadfasd </button>
