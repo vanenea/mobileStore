@@ -41,7 +41,7 @@ Page({
       this.setData({
         type : this.type,
         homeImage : "../../../images/like_a.png",
-        categoryImage : "../../../images/category.png"
+        // categoryImage : "../../../images/category.png"
       });
     } else if (this.type == "category"){
       page = "/pages/category/category";

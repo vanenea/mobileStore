@@ -57,5 +57,5 @@
   
   <view class="js-show-find category-guid" style="display: none;"></view>
 
-  <include src="../common/footer/footer.wxml"/>
+  <!-- <include src="../common/footer/footer.wxml"/> -->
 </view>
