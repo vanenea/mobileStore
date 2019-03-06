@@ -28,6 +28,6 @@
     <view class="nodata_text" wx:else>该分类暂无数据</view>
   </view>
 
-  <include src="../common/footer/footer.wxml"/>
+  <!-- <include src="../common/footer/footer.wxml"/> -->
 
 </view>
