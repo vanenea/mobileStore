@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/category/category",
     "pages/detail/detail",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/abouUs/abouUs"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -28,8 +29,8 @@
         "selectedIconPath": "/images/category_a.png"
       },
       {
-        "pagePath": "pages/me/me",
-        "text": "我的",
+        "pagePath": "pages/abouUs/abouUs",
+        "text": "关于我们",
         "iconPath": "/images/me.png",
         "selectedIconPath": "/images/me.png"
       }
