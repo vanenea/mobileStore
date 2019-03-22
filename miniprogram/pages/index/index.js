@@ -12,7 +12,7 @@ Page({
 
     goods: [
       {
-        id : "1",
+        id: "1",
         title: "测试数据测试数据",
         price: "78.5"
       },
@@ -27,12 +27,24 @@ Page({
         price: "78.5"
       }
     ],
-    type: "home",
-    homeImage: "../../../images/like_a.png",
-    categoryImage: "../../../images/category.png",
-    cartImage: "../../../images/cart.png",
-    meImage: "../../../images/me.png"
+    recommend:[],
+    page: 0
   },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    wx.request({
+      url: 'https://chenlaoshi.top/weChat/getGoods.do',
+      data: {
+        page: this.page
+      },
+      success(res) {
+        console.log(res.data)
+      }
+    })
+  },
+ 
   footerTap(event){
     this.type = event.currentTarget.dataset.type;
     var page = "";

@@ -12,7 +12,7 @@
   <view class="section-title left">优店推荐</view>
   <view class="section-content shops">
     <view class="shop-wrap">
-      <view class="shop-item">
+      <view class="shop-item" wx:for="recommend">
         <navigator url="goods.html">
           <image class="fadeIn" src="../../images/250_435.png"></image>
         </navigator>

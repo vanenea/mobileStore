@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgs: []
+    imgs: [],
+    page: 1
   },
 
   /**
@@ -13,8 +14,10 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://chenlaoshi.top/admin/login.do',
-      data: {},
+      url: 'https://chenlaoshi.top/weChat/getGoods.do',
+      data: {
+        page: this.page
+      },
       success(res) {
         console.log(res.data)
       }
