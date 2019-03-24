@@ -27,13 +27,13 @@ page {
 }
 .section-content{
   width: 100%;
-  height: 218px;
 }
 .shop-item{
   float: left;
   width: 33%;
   height: 217px;
   border-right: 1px solid #e5e5e5;
+  margin-bottom: 5px;
 }
 .shop-wrap{
   height: 218px;
