@@ -28,12 +28,16 @@ Page({
       }
     ],
     recommend:[],
-    page: 0
+    page: 1
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
     wx.request({
       url: 'https://chenlaoshi.top/weChat/getGoods.do',
       data: {
@@ -41,10 +45,13 @@ Page({
       },
       success(res) {
         console.log(res.data)
+        wx.hideLoading({});
       }
     })
   },
- 
+  onReachBottom: function(){
+
+  },
   footerTap(event){
     this.type = event.currentTarget.dataset.type;
     var page = "";
