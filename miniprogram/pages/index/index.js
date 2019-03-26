@@ -28,12 +28,34 @@ Page({
       }
     ],
     recommend:[],
-    page: 1
+    page: 1,
+    totalPage: 0
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getList();
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+   
+  },
+  onReachBottom: function(){
+    if(this.data.totalPage<this.data.page){
+      return;
+    }
+    this.setData({
+      page: this.data.page++
+    })
+    this.getList();
+  },
+  
+  getList: function(){
+    var _this = this;
     wx.showLoading({
       title: '加载中',
       mask: true
@@ -41,40 +63,22 @@ Page({
     wx.request({
       url: 'https://chenlaoshi.top/weChat/getGoods.do',
       data: {
-        page: this.page
+        page: this.data.page
       },
-      success(res) {
-        console.log(res.data)
+      success: function (res) {
+        console.log(res.data);
         wx.hideLoading({});
-      }
-    })
-  },
-  onReachBottom: function(){
-
-  },
-  footerTap(event){
-    this.type = event.currentTarget.dataset.type;
-    var page = "";
-    if(this.type=="home"){
-      page = "/pages/index/index";
-      this.setData({
-        type : this.type,
-        homeImage : "../../../images/like_a.png",
-        // categoryImage : "../../../images/category.png"
-      });
-    } else if (this.type == "category"){
-      page = "/pages/category/category";
-      this.setData({
-        type: this.type,
-        homeImage : "../../../images/like.png",
-        categoryImage : "../../../images/category_a.png"
-
-      })
-    }
-    wx.navigateTo({
-      url: page,
-      success: function(res){
-        console.log(res);
+        _this.setData({
+          totalPage: res.data.data.pages,
+          //background: res.data.data.list
+        })
+      },
+      fail: function () {
+        wx.hideLoading({});
+        wx.showModal({
+          content: '服务器异常,请稍后重试',
+          showCancel: false
+        })
       }
     })
   },
