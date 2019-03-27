@@ -3,30 +3,21 @@
    <swiper class='swiper'
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-      <block wx:for="{{background}}" wx:key="*this">
-        <swiper-item data-id="{{item}}">
-          <image style="width: 100%; height: 180px;" src="{{item}}" ></image>
+      <block wx:for="{{banner}}" wx:key="*this">
+        <swiper-item data-id="{{item}}" data-id="{{item.id}}" bindtap='toDetail'>
+          <image style="width: 100%; height: 180px;" src="https://chenlaoshi.top{{item.images}}" ></image>
         </swiper-item>
       </block>
   </swiper>
   <view class="section-title left">优店推荐</view>
   <view class="section-content shops">
     <view class="shop-wrap">
-      <view class="shop-item" wx:for="recommend">
-        <navigator url="goods.html">
-          <image class="fadeIn" src="../../images/250_435.png"></image>
+      <view class="shop-item" wx:for="{{like}}">
+        <navigator url="goods.html?id={{item.id}}">
+          <image class="fadeIn" src="https://chenlaoshi.top{{item.images}}"></image>
         </navigator>
       </view>
-      <view class="shop-item">
-        <navigator url="goods.html">
-          <image class="fadeIn" src="../../images/250_435.png"></image>
-        </navigator>
-      </view>
-      <view class="shop-item">
-        <navigator url="goods.html">
-          <image class="fadeIn" src="../../images/250_435.png"></image>
-        </navigator>
-      </view>
+      
     </view>
   </view>
 
@@ -35,25 +26,23 @@
   </view> 
   <view class="hot-goods js-waterfull-wrap">
     <view class="js-list js-lazy">
-      <view wx:for="{{goods}}" wx:key="*this" class="goods-list">
+      <view wx:for="{{hot}}" wx:key="*this" class="goods-list" data-id="{{item.id}}" bindtap='toDetail'>
         <view class="goods-item">
-          <navigator url="../detail/detail?id={{item.id}}" class="half">
-            <view class="thumb img-box">
-              <image class="goods-img" src="../../images/320_320.png"></image>
+            <view class="thumb img-box half">
+              <image class="goods-img" src="https://chenlaoshi.top{{item.images}}"></image>
             </view>
             <view class="detail">
               <view class="title">{{item.title }}</view>
               <view class="price">￥{{item.price}}</view>
             </view>
-          </navigator>
         </view>
       </view>
     </view>
   </view>
-  <view class="tip loading-more"><text></text></view>
+  <!-- <view class="tip loading-more"><text></text></view>
   <view class="tip" style="text-align: center;padding: 0px 0;font-size: 13px;color:#666;margin-bottom: 12px;">
         没有更多的商品了
-  </view>
+  </view> -->
   
   <view class="js-show-find category-guid" style="display: none;"></view>
 

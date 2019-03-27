@@ -5,21 +5,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgs: [],
-    page: 1
+    imgs: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var _this = this;
     wx.request({
-      url: 'https://chenlaoshi.top/weChat/getGoods.do',
+      url: 'https://chenlaoshi.top/weChat/getAboutUs.do',
       data: {
-        page: this.page
       },
-      success(res) {
-        console.log(res.data)
+      success: function(res) {
+        console.log(res)
+        if(res.data.code=="0000"){
+          _this.setData({
+            imgs: res.data.data
+          })
+        } else {
+          wx.showModal({
+            content: res.data.msg,
+            showCancel: false
+          })
+        }
+       
+      },
+      fail: function(){
+        wx.showModal({
+          content: '服务器异常,请稍后重试',
+          showCancel: false
+        })
       }
     })
   },

@@ -1,1 +1,4 @@
 /* miniprogram/pages/abouUs/abouUs.wxss */
+.aboutUsImg{
+  width: 100%;
+}
