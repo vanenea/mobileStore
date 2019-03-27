@@ -136,13 +136,8 @@ Page({
     ],
     curNav: 1,
     curIndex: 0,
-
-    type: "category",
-    homeImage: "../../../images/like.png",
-    categoryImage: "../../../images/category_a.png",
-    cartImage: "../../../images/cart.png",
-    meImage: "../../../images/me.png"
-
+    category: [],
+    goods: []
   },
 
   //事件处理函数  
@@ -157,26 +152,6 @@ Page({
     })
   },
   /**
-   * 下导航
-   */
-  footerTap(event) {
-    this.type = event.currentTarget.dataset.type;
-    if (this.type == "home") {
-      this.setData({
-        type: this.type,
-        homeImage: "../../../images/like_a.png",
-        categoryImage: "../../../images/category.png"
-      });
-    } else if (event.currentTarget.dataset.type == "category") {
-      this.setData({
-        type: this.type,
-        homeImage: "../../../images/like.png",
-        categoryImage: "../../../images/category_a.png"
-
-      })
-    }
-  },
-  /**
    * 详情页 
    */
   toDetail: function(event){
@@ -184,6 +159,35 @@ Page({
       url: '../detail/detail?id=' + event.currentTarget.dataset.id
     })
   },
+
+  getCategory: function(){
+    var _this = this;
+    wx.request({
+      url: 'https://chenlaoshi.top/weChat/getCategory.do',
+      data: {
+      },
+      success: function (res) {
+        console.log(res.data);
+        _this.setData({
+          category: res.data.data
+        })
+      },
+      fail: function () {
+        wx.showModal({
+          content: '服务器异常,请稍后重试',
+          showCancel: false
+        })
+      }
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

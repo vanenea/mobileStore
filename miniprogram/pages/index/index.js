@@ -1,6 +1,5 @@
 Page({
   data: {
-    background: ['../../images/79_295.png', '../../images/79_295.png', '../../images/79_295.png'],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -12,25 +11,6 @@ Page({
     banner: [],
     like: [],
     hot: [],
-    goods: [
-      {
-        id: "1",
-        title: "测试数据测试数据",
-        price: "78.5"
-      },
-      {
-        id: "2",
-        title: "测试数据测试数据",
-        price: "78.5"
-      },
-      {
-        id: "3",
-        title: "测试数据测试数据",
-        price: "78.5"
-      }
-    ],
-    recommend:[],
-    page: 1,
   },
   /**
    * 生命周期函数--监听页面加载
