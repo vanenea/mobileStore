@@ -32,7 +32,7 @@ Page({
       mask: true
     })
     wx.request({
-      url: 'https://chenlaoshi.top/weChat/getGoods.do',
+      url: 'https://www.chenlaoshi.top/weChat/getGoods.do',
       data: {
       },
       success: function (res) {
@@ -64,7 +64,7 @@ Page({
     })
   },
   toDetail: function(event){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../detail/detail?id=' + event.currentTarget.dataset.id
 
     })

@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     var _this = this;
     wx.request({
-      url: 'https://chenlaoshi.top/weChat/getAboutUs.do',
+      url: 'https://www.chenlaoshi.top/weChat/getAboutUs.do',
       data: {
       },
       success: function(res) {

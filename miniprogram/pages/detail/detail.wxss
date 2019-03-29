@@ -17,7 +17,7 @@ page {
   clear: both;
 }
 .orange {
-  margin-bottom: 18px;
+  /* margin-bottom: 18px; */
 }
 .goods-header {
   display: block;
@@ -140,7 +140,7 @@ page {
     background-size:100% 100%;
 }
 .secondPart {
-  width: 50%;
+  width: 100%;
   float: left;
   text-align: center;
   line-height: 40px;

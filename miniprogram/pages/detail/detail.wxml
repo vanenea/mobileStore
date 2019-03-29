@@ -3,20 +3,20 @@
    <swiper class='swiper'
         indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
         interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-      <block wx:for="{{background}}" wx:key="*this">
+      <block wx:for="{{introImg}}" wx:key="*this">
         <swiper-item class="" bindtap="previewImage" data-imgSrc="{{item}}" data-imgSrcs="{{background}}">
-          <image style="width: 100%; height: 100%;" src="{{item}}" ></image>
+          <image style="width: 100%; height: 100%;" src="https://www.chenlaoshi.top{{item.url}}" ></image>
         </swiper-item>
       </block>
   </swiper>
 
   <view class="goods-header">
-    <view class="title">{{ detail.title }}</view>
+    <view class="title">{{ goods.title }}</view>
     <!-- <text class="hide js-add-wish js-wish-animate wish-add font-size-12 tag tag-redf30 pull-right">喜欢</text> -->
     <view class="goods-price">
       <view class="current-price">
         <text>¥</text>
-        <text class="js-goods-price price">{{ detail.price }}</text>
+        <text class="js-goods-price price">{{ goods.price }}</text>
       </view>
       <view class="renzheng block-item">
         <text class="js-rz-item-alert rz-item">
@@ -29,17 +29,17 @@
         </text>
       </view>
       <view class="clear"></view>
-      <view class="original-price">{{detail.originalPrice}}</view>
+      <view class="original-price">{{goods.originalPrice}}</view>
     </view>
     <text class="with-margin-l"></text>
     <view class="stock-detail">
-      <view class="threePart tl">运费：{{detail.postage}}</view>
-      <view class="threePart tc">剩余:{{detail.remain}}</view>
-      <view class="threePart tr">销量：{{detail.sales}}</view>
+      <view class="threePart tl">运费：{{goods.postage}}</view>
+      <view class="threePart tc">剩余:{{goods.remain}}</view>
+      <view class="threePart tr">销量：{{goods.sales}}</view>
     </view>
   </view>
 
-  <view class="sku-detail adv-opts">
+  <!-- <view class="sku-detail adv-opts">
     <view class="sku-detail-inner adv-opts-inner">
       <view class="sku-group select-sku js-select-sku">
         <view class="select" bindtap="showModal">
@@ -47,18 +47,18 @@
         </view>
       </view>
     </view>
-  </view>
+  </view> -->
 
 <!-- 商品详情 -->
   <view class="js-detail-container" style="margin-top: 10px;">
     <view class="js-tabber-container goods-detail">
       <view class="js-tabber tabber tabber-n2 clearfix orange">
         <view class="secondPart {{bsnType=='detail'?'active':''}}" bindtap="itemDetail">商品详情</view>
-        <view class="secondPart {{bsnType=='deal'?'active':''}}" bindtap="deal">商品评价</view>
+        <!-- <view class="secondPart {{bsnType=='deal'?'active':''}}" bindtap="deal">商品评价</view> -->
         <view class="clear"></view>
       </view>
       <view class="js-tabber-content">
-        <view class="js-part" hidden="{{bsnType=='detail'}}">
+        <!-- <view class="js-part" hidden="{{bsnType=='detail'}}">
           <view class="comment-container" wx:for="{{comment}}" wx:for-item="comItem" wx:key="*">
             <view class="user">
               <text class="cmt-user">{{comItem.buyer}}</text>
@@ -70,9 +70,9 @@
               <image class="c-img" data-imgSrc="{{imgItem}}" data-imgSrcs="{{comItem.image}}" wx:for="{{comItem.image}}" wx:for-item="imgItem" wx:key="this" src="{{imgItem}}" bindtap="previewImage"></image>
             </view>
           </view>
-        </view>
+        </view> -->
         <view class="js-part js-goods-detail goods-tabber-c" hidden="{{bsnType=='deal'}}">
-          <image class="image-detail"  wx:for="{{background}}" wx:key="*this" src="{{item}}" mode="widthFix"></image>
+          <image class="image-detail"  wx:for="{{detailImg}}" wx:key="*this" src="https://www.chenlaoshi.top{{item.url}}" mode="widthFix"></image>
         </view>
       </view>
     </view>
@@ -86,7 +86,7 @@
           <image alt="" class="js-goods-thumb goods-thumb" src="http://dummyimage.com/375x375/79dff2"></image>
         </view> 
         <view class="detail goods-base-info clearfix">
-          <text class="title c-black ellipsis">寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-11斤</text> 
+          <text class="title c-black ellipsis">{{goods.description}}</text> 
           <view class="gs-price">
             <view class="current-price pull-left c-black">
               <text class="price-name pull-left font-size-14 c-orange">¥</text>

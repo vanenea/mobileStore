@@ -52,7 +52,10 @@ Page({
     num: 1,
     // 使用data数据对象设置样式名
     minusStatus: 'disabled',
-    moRemain: 56
+    moRemain: 56,
+    goods: {},
+    introImg: [],
+    detailImg: []
   },
 
   /**
@@ -60,6 +63,8 @@ Page({
    */
   onLoad: function (options) {
     console.log(options.id)
+    this.getGoods(options.id);
+    this.getImg(options.id);
   },
 
   /**
@@ -239,8 +244,79 @@ Page({
     this.setData({
       num: num
     });
+  },
+
+  /**
+   * 
+   */
+  getGoods: function(id){
+    var _this = this;
+    wx.request({
+      url: 'https://www.chenlaoshi.top/weChat/getGoodsDetail.do',
+      data: {
+        "id": id
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.code == "0000") {
+          _this.setData({
+            goods: res.data.data
+          })
+        } else {
+          wx.showModal({
+            content: res.data.msg,
+            showCancel: false
+          })
+        }
+      },
+      fail: function () {
+        wx.showModal({
+          content: '服务器异常,请稍后重试',
+          showCancel: false
+        })
+      }
+    })
+  },
+
+  /**
+   * 获取图片
+   */
+  getImg: function(id){
+    var _this = this;
+    wx.request({
+      url: 'https://www.chenlaoshi.top/weChat/getImgByGoodsId.do',
+      data: {
+        "id": id
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.code == "0000") {
+          var imgsData = res.data.data;
+          for (var i = 0; i < imgsData.length; i++){
+            if("01"==imgsData[i].type){
+              _this.data.introImg.push(imgsData[i]);
+            } else if ("02" == imgsData[i].type) {
+              _this.data.detailImg.push(imgsData[i]);
+            }
+          }
+          _this.setData({
+            introImg: _this.data.introImg,
+            detailImg: _this.data.detailImg
+          })
+        } else {
+          wx.showModal({
+            content: res.data.msg,
+            showCancel: false
+          })
+        }
+      },
+      fail: function () {
+        wx.showModal({
+          content: '服务器异常,请稍后重试',
+          showCancel: false
+        })
+      }
+    })
   }
-
-
 
 })
