@@ -25,6 +25,20 @@ Page({
   onReady: function () {
    
   },
+
+  /**
+   * 监控下拉刷新
+   */
+  onPullDownRefresh: function(){
+    this.setData({
+      banner: [],
+      like: [],
+      hot: [],
+    })
+    this.getList();
+    wx.stopPullDownRefresh({})
+    //wx.startPullDownRefresh();
+  },
   getList: function(){
     var _this = this;
     wx.showLoading({
