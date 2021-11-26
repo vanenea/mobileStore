@@ -1,3 +1,3 @@
 <view>
-  <image class='aboutUsImg' wx:for="{{imgs}}" wx:key="*this" src="https://www.chenlaoshi.top{{item.url}}" mode="widthFix"></image>
+  <image class='aboutUsImg' wx:for="{{imgs}}" wx:key="*this" src="{{baseUrl+item.url}}" mode="widthFix"></image>
 </view>

@@ -16,7 +16,7 @@
         <view class="nav_right_items">
         <!--界面跳转 -->
           <view class="toDetail" data-id="{{item.id}}" bindtap="toDetail">
-            <image src="https://www.chenlaoshi.top{{item.images}}"></image>
+            <image src="{{baseUrl+item.images}}"></image>
             <text>{{item.title}}</text>
             <text class="price" style="color: #ff525e;">￥{{item.price}}</text>
             <view class="clear"></view>

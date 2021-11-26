@@ -1,11 +1,12 @@
 // miniprogram/pages/detail/detail.js
+var utils = require('../../utils/utils.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    background: ['https://www.chenlaoshi.top/upload/images/375_375.png', 'https://www.chenlaoshi.top/upload/images/375_375.png', 'https://www.chenlaoshi.top/upload/images/375_375.png'],
+    background: [],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
@@ -14,25 +15,45 @@ Page({
     duration: 500,
     previousMargin: 0,
     nextMargin: 0,
-    detail:{
+    detail: {},
+    sku: [],
+    skuIndex: 0,
+    comment: [],
+    bsnType: "detail",
+    // input默认是1
+    num: 1,
+    // 使用data数据对象设置样式名
+    minusStatus: 'disabled',
+    moRemain: 56,
+    goods: {},
+    introImg: [],
+    detailImg: [],
+    baseUrl: utils.getBaseUrl()
+  },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.data.background = [this.data.baseUrl + 'upload/images/375_375.png', this.data.baseUrl + 'upload/images/375_375.png', this.data.baseUrl + 'upload/images/375_375.png'];
+    this.data.detail = {
       "id": "1",
       "title": "寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-11斤",
       "price": "10000",
       "originalPrice": "12000",
       "postage": "免运费",
-      "remain":"450",
-      "sales":"50"
-    },
-    sku: ["120g","150g","200g"],
-    skuIndex: 0,
-    comment: [
+      "remain": "450",
+      "sales": "50"
+    }
+    this.data.sku = ["120g", "150g", "200g"];
+    this.data.comment = [
       {
         "buyer": "陈****",
         "date": "2018/12/22",
         "comment": "除了物流让人等的心焦，收到手机的惊喜还是可以抵消的，曲面屏很漂亮，速度也快，拍照功能非常强大，试了广角微距以及黑暗环境的表现力，都表示能让我满意，，还有续航功能正在体验之中。",
         "image": [
-          "https://www.chenlaoshi.top/upload/images/375_375.png",
-          "https://www.chenlaoshi.top/upload/images/375_375.png"
+          this.data.baseUrl + "upload/images/375_375.png",
+          this.data.baseUrl + "upload/images/375_375.png"
         ]
 
       },
@@ -47,22 +68,7 @@ Page({
 
       }
     ],
-    bsnType: "detail",
-    // input默认是1
-    num: 1,
-    // 使用data数据对象设置样式名
-    minusStatus: 'disabled',
-    moRemain: 56,
-    goods: {},
-    introImg: [],
-    detailImg: []
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    console.log(options.id)
+      console.log(options.id)
     this.getGoods(options.id);
     this.getImg(options.id);
   },
@@ -119,8 +125,8 @@ Page({
   /**
    * 商品详情
    */
-  itemDetail: function(){
-    if (this.bsnType!="detail"){
+  itemDetail: function () {
+    if (this.bsnType != "detail") {
       this.setData({
         bsnType: "detail"
 
@@ -132,7 +138,7 @@ Page({
   /**
    * 本店成交
    */
-  deal: function(){
+  deal: function () {
     if (this.bsnType != "deal") {
       this.setData({
         bsnType: "deal"
@@ -143,7 +149,7 @@ Page({
   /**
    *预览图片你呢 吗                                                                
    */
-  previewImage: function(event){
+  previewImage: function (event) {
     wx.previewImage({
       urls: event.currentTarget.dataset.imgsrcs,
       current: event.currentTarget.dataset.imgsrc
@@ -154,7 +160,7 @@ Page({
    * 显示遮罩层
    */
   showModal: function () {
-    
+
     var animation = wx.createAnimation({
       duration: 200,
       timingFunction: "linear",
@@ -196,7 +202,7 @@ Page({
     }.bind(this), 200)
   },
   /**选择sku */
-  selectSku: function(event){
+  selectSku: function (event) {
     this.setData({
       skuIndex: event.currentTarget.dataset.index
     })
@@ -224,7 +230,7 @@ Page({
     var num = this.data.num;
     var moRemain = this.data.moRemain;
     // 不作过多考虑自增1
-    if(moRemain>1){
+    if (moRemain > 1) {
       num++;
       moRemain--;
     }
@@ -249,10 +255,10 @@ Page({
   /**
    * 
    */
-  getGoods: function(id){
+  getGoods: function (id) {
     var _this = this;
     wx.request({
-      url: 'https://www.chenlaoshi.top/weChat/getGoodsDetail.do',
+      url: this.data.baseUrl + 'weChat/getGoodsDetail.do',
       data: {
         "id": id
       },
@@ -281,10 +287,10 @@ Page({
   /**
    * 获取图片
    */
-  getImg: function(id){
+  getImg: function (id) {
     var _this = this;
     wx.request({
-      url: 'https://www.chenlaoshi.top/weChat/getImgByGoodsId.do',
+      url: this.data.baseUrl + 'weChat/getImgByGoodsId.do',
       data: {
         "id": id
       },
@@ -292,8 +298,8 @@ Page({
         console.log(res);
         if (res.data.code == "0000") {
           var imgsData = res.data.data;
-          for (var i = 0; i < imgsData.length; i++){
-            if("01"==imgsData[i].type){
+          for (var i = 0; i < imgsData.length; i++) {
+            if ("01" == imgsData[i].type) {
               _this.data.introImg.push(imgsData[i]);
             } else if ("02" == imgsData[i].type) {
               _this.data.detailImg.push(imgsData[i]);

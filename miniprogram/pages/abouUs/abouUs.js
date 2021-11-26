@@ -1,11 +1,13 @@
 // miniprogram/pages/abouUs/abouUs.js
+var utils = require('../../utils/utils.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgs: []
+    imgs: [],
+    baseUrl: utils.getBaseUrl()
   },
 
   /**
@@ -14,12 +16,12 @@ Page({
   onLoad: function (options) {
     var _this = this;
     wx.request({
-      url: 'https://www.chenlaoshi.top/weChat/getAboutUs.do',
+      url: this.data.baseUrl + 'weChat/getAboutUs.do',
       data: {
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res)
-        if(res.data.code=="0000"){
+        if (res.data.code == "0000") {
           _this.setData({
             imgs: res.data.data
           })
@@ -29,9 +31,9 @@ Page({
             showCancel: false
           })
         }
-       
+
       },
-      fail: function(){
+      fail: function () {
         wx.showModal({
           content: '服务器异常,请稍后重试',
           showCancel: false

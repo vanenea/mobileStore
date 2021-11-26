@@ -1,4 +1,5 @@
 // miniprogram/pages/category.js
+var utils = require('../../utils/utils.js')
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
     curIndex: 0,
     category: [],
     goods: [],
-    initId: 0
+    initId: 0,
+    baseUrl: utils.getBaseUrl()
   },
 
   //事件处理函数  
@@ -27,7 +29,7 @@ Page({
   /**
    * 详情页 
    */
-  toDetail: function(event){
+  toDetail: function (event) {
     wx.navigateTo({
       url: '../detail/detail?id=' + event.currentTarget.dataset.id
     })
@@ -36,15 +38,15 @@ Page({
   /**
    * 获取分类
    */
-  getCategory: function(){
+  getCategory: function () {
     var _this = this;
     wx.request({
-      url: 'https://www.chenlaoshi.top/weChat/getCategory.do',
+      url: this.data.baseUrl + 'weChat/getCategory.do',
       data: {
       },
       success: function (res) {
         console.log(res.data);
-        if("0000"==res.data.code){
+        if ("0000" == res.data.code) {
           _this.getGoods(res.data.data[0].id);
           _this.setData({
             curNav: res.data.data[0].id,
@@ -56,7 +58,7 @@ Page({
             showCancel: false
           })
         }
-       
+
       },
       fail: function () {
         wx.showModal({
@@ -70,10 +72,10 @@ Page({
   /**
    * 获取商品
    */
-  getGoods: function (categoryId){
+  getGoods: function (categoryId) {
     var _this = this;
     wx.request({
-      url: 'https://www.chenlaoshi.top/weChat/getGoodsByCategory.do',
+      url: this.data.baseUrl + '/weChat/getGoodsByCategory.do',
       data: {
         categoryId: categoryId
       },

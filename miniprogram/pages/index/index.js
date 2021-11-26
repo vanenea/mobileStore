@@ -1,3 +1,4 @@
+var utils = require('../../utils/utils.js')
 Page({
   data: {
     indicatorDots: true,
@@ -11,6 +12,7 @@ Page({
     banner: [],
     like: [],
     hot: [],
+    baseUrl: utils.getBaseUrl()
   },
   /**
    * 生命周期函数--监听页面加载
@@ -34,6 +36,7 @@ Page({
       banner: [],
       like: [],
       hot: [],
+      
     })
     this.getList();
     wx.stopPullDownRefresh({})
@@ -46,7 +49,7 @@ Page({
       mask: true
     })
     wx.request({
-      url: 'https://www.chenlaoshi.top/weChat/getGoods.do',
+      url: this.data.baseUrl + 'weChat/getGoods.do',
       data: {
       },
       success: function (res) {

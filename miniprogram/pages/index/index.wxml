@@ -1,40 +1,40 @@
 <!--index.wxml-->
 <view class="container">
-   <swiper class='swiper'
-        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
-        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-      <block wx:for="{{banner}}" wx:key="*this">
-        <swiper-item data-id="{{item}}" data-id="{{item.id}}" bindtap='toDetail'>
-          <image style="width: 100%; height: 180px;" src="https://www.chenlaoshi.top{{item.images}}" ></image>
-        </swiper-item>
-      </block>
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}"
+    vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px"
+    next-margin="{{nextMargin}}px">
+    <block wx:for="{{banner}}" wx:key="*this">
+      <swiper-item data-id="{{item}}" data-id="{{item.id}}" bindtap='toDetail'>
+        <image style="width: 100%; height: 180px;" src="{{baseUrl+item.images}}"></image>
+      </swiper-item>
+    </block>
   </swiper>
   <view class="section-title left">优店推荐</view>
   <view class="section-content shops">
     <view class="shop-wrap">
       <view class="shop-item" wx:for="{{like}}">
         <view data-id="{{item.id}}" bindtap='toDetail'>
-          <image class="fadeIn" src="https://www.chenlaoshi.top{{item.images}}"></image>
+          <image class="fadeIn" src="{{baseUrl + item.images}}"></image>
         </view>
       </view>
-      
+
     </view>
   </view>
 
   <view class="line-block line-block-gray">
     <view class="lineblock-title"><text class="lineblock-font">最热商品推荐</text></view>
-  </view> 
+  </view>
   <view class="hot-goods js-waterfull-wrap">
     <view class="js-list js-lazy">
       <view wx:for="{{hot}}" wx:key="*this" class="goods-list" data-id="{{item.id}}" bindtap='toDetail'>
         <view class="goods-item">
-            <view class="thumb img-box half">
-              <image class="goods-img" src="https://www.chenlaoshi.top{{item.images}}"></image>
-            </view>
-            <view class="detail">
-              <view class="title">{{item.title }}</view>
-              <view class="price">￥{{item.price}}</view>
-            </view>
+          <view class="thumb img-box half">
+            <image class="goods-img" src="{{baseUrl+item.images}}"></image>
+          </view>
+          <view class="detail">
+            <view class="title">{{item.title }}</view>
+            <view class="price">￥{{item.price}}</view>
+          </view>
         </view>
       </view>
     </view>
@@ -43,7 +43,7 @@
   <view class="tip" style="text-align: center;padding: 0px 0;font-size: 13px;color:#666;margin-bottom: 12px;">
         没有更多的商品了
   </view> -->
-  
+
   <view class="js-show-find category-guid" style="display: none;"></view>
 
   <!-- <include src="../common/footer/footer.wxml"/> -->

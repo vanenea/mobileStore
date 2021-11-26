@@ -36,5 +36,6 @@
       }
     ],
     "selectedColor": "#ee8618"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
