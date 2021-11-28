@@ -51,6 +51,7 @@
 
 <!-- 商品详情 -->
   <view class="js-detail-container" style="margin-top: 10px;">
+    <van-button type="default">默认按钮</van-button>
     <view class="js-tabber-container goods-detail">
       <view class="js-tabber tabber tabber-n2 clearfix orange">
         <view class="secondPart {{bsnType=='detail'?'active':''}}" bindtap="itemDetail">商品详情</view>
