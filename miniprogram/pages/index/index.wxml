@@ -43,7 +43,7 @@
   <view class="tip" style="text-align: center;padding: 0px 0;font-size: 13px;color:#666;margin-bottom: 12px;">
         没有更多的商品了
   </view> -->
-
+  
   <view class="js-show-find category-guid" style="display: none;"></view>
 
   <!-- <include src="../common/footer/footer.wxml"/> -->

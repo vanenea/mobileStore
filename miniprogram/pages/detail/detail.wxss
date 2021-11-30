@@ -262,6 +262,9 @@ page {
   background-image: url(http://101.133.133.10/upload/images/icon_close.png);
   background-size: 22px 22px;
 }
+.fr{
+  float: right;
+}
 
 .sku-sel-list-o{
   font-size: 13px;
@@ -367,4 +370,10 @@ page {
 .buy{
   background: #f44;
   width: 50%;
+}
+.chat-margin{
+  margin-right: 55px;
+}
+.ds-contents {
+  display: contents;
 }

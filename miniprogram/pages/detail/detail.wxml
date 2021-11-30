@@ -1,13 +1,11 @@
 <!--miniprogram/pages/detail/detail.wxml-->
 <view>
-   <swiper class='swiper'
-        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
-        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-      <block wx:for="{{introImg}}" wx:key="*this">
-        <swiper-item class="" bindtap="previewImage" data-imgSrc="{{item}}" data-imgSrcs="{{background}}">
-          <image style="width: 100%; height: 100%;" src="{{baseUrl+item.url}}" ></image>
-        </swiper-item>
-      </block>
+  <swiper class='swiper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+    <block wx:for="{{introImg}}" wx:key="*this">
+      <swiper-item class="" bindtap="previewImage" data-imgSrc="{{item}}" data-imgSrcs="{{background}}">
+        <image style="width: 100%; height: 100%;" src="{{baseUrl+item.url}}"></image>
+      </swiper-item>
+    </block>
   </swiper>
 
   <view class="goods-header">
@@ -29,7 +27,8 @@
         </text>
       </view>
       <view class="clear"></view>
-      <view class="original-price">{{goods.originalPrice}}</view>
+      <view class="original-price">{{goods.originalPrice}}<button class="ds-contents" open-type="contact" bindcontact="handleContact"><van-icon class="fr chat-margin" name="chat-o" dot size="30px" /></button>
+      </view>
     </view>
     <text class="with-margin-l"></text>
     <view class="stock-detail">
@@ -49,9 +48,8 @@
     </view>
   </view> -->
 
-<!-- 商品详情 -->
+  <!-- 商品详情 -->
   <view class="js-detail-container" style="margin-top: 10px;">
-    <van-button type="default">默认按钮</van-button>
     <view class="js-tabber-container goods-detail">
       <view class="js-tabber tabber tabber-n2 clearfix orange">
         <view class="secondPart {{bsnType=='detail'?'active':''}}" bindtap="itemDetail">商品详情</view>
@@ -73,7 +71,7 @@
           </view>
         </view> -->
         <view class="js-part js-goods-detail goods-tabber-c" hidden="{{bsnType=='deal'}}">
-          <image class="image-detail"  wx:for="{{detailImg}}" wx:key="*this" src="{{baseUrl+item.url}}" mode="widthFix"></image>
+          <image class="image-detail" wx:for="{{detailImg}}" wx:key="*this" src="{{baseUrl+item.url}}" mode="widthFix"></image>
         </view>
       </view>
     </view>
@@ -85,23 +83,23 @@
       <view class="modal-top">
         <view class="thumb">
           <image alt="" class="js-goods-thumb goods-thumb" src="http://dummyimage.com/375x375/79dff2"></image>
-        </view> 
+        </view>
         <view class="detail goods-base-info clearfix">
-          <text class="title c-black ellipsis">{{goods.description}}</text> 
+          <text class="title c-black ellipsis">{{goods.description}}</text>
           <view class="gs-price">
             <view class="current-price pull-left c-black">
               <text class="price-name pull-left font-size-14 c-orange">¥</text>
-                <text class="js-goods-price font-size-16 vertical-middle c-orange">98.00</text>
-            </view> 
+              <text class="js-goods-price font-size-16 vertical-middle c-orange">98.00</text>
+            </view>
           </view>
-        </view> 
+        </view>
         <view class="js-cancel sku-cancel" bindtap="hideModal">
           <view class="cancel-img">
           </view>
         </view>
         <view class="clear"></view>
       </view>
-      
+
       <view class="sku-sel-list-o">
         <view class="sku-sel-title ">规格</view>
         <text class="sku-sel-list {{index==skuIndex?'sku-selected':''}}" bindtap="selectSku" wx:key="*this" data-index="{{index}}" wx:for="{{sku}}">{{item}}</text>
@@ -114,12 +112,12 @@
             <!-- 减号 -->
             <text class="{{minusStatus}}" bindtap="bindMinus"> - </text>
             <!-- 数值 -->
-            <input type="number" bindchange="bindManual" value="{{num}}" disabled="true"/>
+            <input type="number" bindchange="bindManual" value="{{num}}" disabled="true" />
             <!-- 加号 -->
             <text class="normal" bindtap="bindPlus"> + </text>
           </view>
           <view>剩余： {{moRemain}}</view>
-        
+
         </view>
       </view>
 
