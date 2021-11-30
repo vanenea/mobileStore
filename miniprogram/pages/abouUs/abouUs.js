@@ -89,5 +89,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  callPhone(){
+    wx.makePhoneCall({
+      phoneNumber: '18957459886' 
+    })
   }
 })

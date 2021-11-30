@@ -1,3 +1,8 @@
 <view>
   <image class='aboutUsImg' wx:for="{{imgs}}" wx:key="*this" src="{{baseUrl+item.url}}" mode="widthFix"></image>
+  <view style="text-align: center; margin-bottom: 40px;">
+    <van-divider contentPosition="center" textColor="#1989fa">联系我们</van-divider>
+    <van-icon class="pr" bind:click="callPhone" name="phone-o" size="30"/>
+    <button class="ds-contents" open-type="contact" bindcontact="handleContact"><van-icon class="fr chat-margin" name="chat-o" size="30px" /></button>
+  </view>
 </view>

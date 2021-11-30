@@ -2,3 +2,9 @@
 .aboutUsImg{
   width: 100%;
 }
+.pr{
+  padding-right: 30px;
+}
+.ds-contents {
+  display: contents;
+}
