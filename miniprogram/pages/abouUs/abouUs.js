@@ -7,7 +7,8 @@ Page({
    */
   data: {
     imgs: [],
-    baseUrl: utils.getBaseUrl()
+    baseUrl: utils.getBaseUrl(),
+    phoneNo: ""
   },
 
   /**
@@ -23,7 +24,8 @@ Page({
         console.log(res)
         if (res.data.code == "0000") {
           _this.setData({
-            imgs: res.data.data
+            imgs: res.data.data.imgs,
+            phoneNo: res.data.data.phoneNo
           })
         } else {
           wx.showModal({
@@ -92,7 +94,7 @@ Page({
   },
   callPhone(){
     wx.makePhoneCall({
-      phoneNumber: '18957459886' 
+      phoneNumber: this.data.phoneNo 
     })
   }
 })
