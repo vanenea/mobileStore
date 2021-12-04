@@ -276,6 +276,7 @@ page {
   margin:7px;
 }
 .sku-sel-list {
+  display: inline-flex;
   background-color: #f7f7f7;
   border-radius: 4px;
   padding: 5px 5px;

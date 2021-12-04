@@ -1,6 +1,6 @@
 
 module.exports = {
     getBaseUrl() {
-        return 'http://101.133.133.10/';
+        return 'https://www.chenlaoshi.top/';
     }
 }
