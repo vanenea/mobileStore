@@ -16,7 +16,6 @@ Page({
     previousMargin: 0,
     nextMargin: 0,
     detail: {},
-    sku: [],
     skuIndex: 0,
     comment: [],
     bsnType: "detail",
@@ -45,10 +44,6 @@ Page({
       "remain": "450",
       "sales": "50"
     }
-    this.setData({
-      sku : ["120g", "150g", "200g"]
-    })
-    
     this.data.comment = [
       {
         "buyer": "陈****",
@@ -191,9 +186,8 @@ Page({
   },
   /**选择sku */
   selectSku: function (e) {
-    debugger
     this.setData({
-      skuIndex: event.currentTarget.dataset.index
+      skuIndex: e.currentTarget.dataset.index
     })
   },
   /* 点击减号 */

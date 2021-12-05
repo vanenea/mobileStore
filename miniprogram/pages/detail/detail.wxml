@@ -14,7 +14,7 @@
     <view class="goods-price">
       <view class="current-price">
         <text>¥</text>
-        <text class="js-goods-price price">{{ goods.price }}</text>
+        <text class="js-goods-price price">{{ (goods.goodsSkus && goods.goodsSkus[skuIndex].price)?goods.goodsSkus[skuIndex].price:'' }}</text>
       </view>
       <view class="renzheng block-item">
         <text class="js-rz-item-alert rz-item">
@@ -27,7 +27,7 @@
         </text>
       </view>
       <view class="clear"></view>
-      <view class="original-price">{{goods.originalPrice}}<button class="ds-contents" open-type="contact" bindcontact="handleContact">
+      <view class="original-price">{{(goods.goodsSkus && goods.goodsSkus[skuIndex].originalPrice)?(goods.goodsSkus[skuIndex].originalPrice):''}}<button class="ds-contents" open-type="contact" bindcontact="handleContact">
           <van-icon class="fr chat-margin" name="chat-o" dot size="30px" />
         </button>
       </view>
@@ -44,7 +44,7 @@
     <view class="sku-detail-inner adv-opts-inner">
       <view class="sku-group select-sku js-select-sku">
         <view class="select" bindtap="showModal">
-          <text class="js-sku-label">选择： 规格</text>
+          <text class="js-sku-label">选择规格 ： {{goods.goodsSkus[skuIndex].name}}</text>
         </view>
       </view>
     </view>
@@ -91,7 +91,7 @@
           <view class="gs-price">
             <view class="current-price pull-left c-black">
               <text class="price-name pull-left font-size-14 c-orange">¥</text>
-              <text class="js-goods-price font-size-16 vertical-middle c-orange">98.00</text>
+              <text class="js-goods-price font-size-16 vertical-middle c-orange">{{goods.goodsSkus[skuIndex].price}}</text>
             </view>
           </view>
         </view>
@@ -105,7 +105,7 @@
       <view class="sku-sel-list-o">
         <view class="sku-sel-title ">规格</view>
         
-          <text class="sku-sel-list {{index==skuIndex?'sku-selected':''}}" bindtap="selectSku" data-params="{{item}}" wx:key="*this" data-index="{{index}}" wx:for="{{sku}}">{{item}} </text>
+          <text class="sku-sel-list {{index==skuIndex?'sku-selected':''}}" bindtap="selectSku" data-params="{{item}}" wx:key="*this" data-index="{{index}}" wx:for="{{goods.goodsSkus}}">{{item.name}} </text>
         
       </view>
 

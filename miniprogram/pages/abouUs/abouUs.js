@@ -93,6 +93,7 @@ Page({
 
   },
   callPhone(){
+    debugger
     wx.makePhoneCall({
       phoneNumber: this.data.phoneNo 
     })

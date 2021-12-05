@@ -53,7 +53,6 @@ Page({
       data: {
       },
       success: function (res) {
-        console.log(res.data);
         var items = res.data.data;
         for (var i = 0; i < items.length; i++){
           if (items[i].type=='03'){
