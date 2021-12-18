@@ -44,28 +44,27 @@ Page({
       "remain": "450",
       "sales": "50"
     }
-    this.data.comment = [
-      {
-        "buyer": "陈****",
-        "date": "2018/12/22",
-        "comment": "除了物流让人等的心焦，收到手机的惊喜还是可以抵消的，曲面屏很漂亮，速度也快，拍照功能非常强大，试了广角微距以及黑暗环境的表现力，都表示能让我满意，，还有续航功能正在体验之中。",
-        "image": [
-          this.data.baseUrl + "upload/images/375_375.png",
-          this.data.baseUrl + "upload/images/375_375.png"
-        ]
+    this.data.comment = [{
+          "buyer": "陈****",
+          "date": "2018/12/22",
+          "comment": "除了物流让人等的心焦，收到手机的惊喜还是可以抵消的，曲面屏很漂亮，速度也快，拍照功能非常强大，试了广角微距以及黑暗环境的表现力，都表示能让我满意，，还有续航功能正在体验之中。",
+          "image": [
+            this.data.baseUrl + "upload/images/375_375.png",
+            this.data.baseUrl + "upload/images/375_375.png"
+          ]
 
-      },
-      {
-        "buyer": "陈****",
-        "date": "2018/12/22",
-        "comment": "除了物流让人等的心焦，收到手机的惊喜还是可以抵消的，曲面屏很漂亮，速度也快，拍照功能非常强大，试了广角微距以及黑暗环境的表现力，都表示能让我满意，，还有续航功能正在体验之中。",
-        "image": [
-          "../../images/375_375.png",
-          "../../images/375_375.png"
-        ]
+        },
+        {
+          "buyer": "陈****",
+          "date": "2018/12/22",
+          "comment": "除了物流让人等的心焦，收到手机的惊喜还是可以抵消的，曲面屏很漂亮，速度也快，拍照功能非常强大，试了广角微距以及黑暗环境的表现力，都表示能让我满意，，还有续航功能正在体验之中。",
+          "image": [
+            "../../images/375_375.png",
+            "../../images/375_375.png"
+          ]
 
-      }
-    ],
+        }
+      ],
       console.log(options.id)
     this.getGoods(options.id);
     this.getImg(options.id);
@@ -145,11 +144,17 @@ Page({
     }
   },
   /**
-   *预览图片你呢 吗                                                                
+   *预览图片                                                           
    */
   previewImage: function (event) {
+    debugger;
+    var us = event.currentTarget.dataset.imgsrcs;
+    var urls = [];
+    us.forEach(element => {
+      urls.push(this.data.baseUrl + element.url)
+    });
     wx.previewImage({
-      urls: event.currentTarget.dataset.imgsrcs,
+      urls: urls,
       current: event.currentTarget.dataset.imgsrc
 
     })
