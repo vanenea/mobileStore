@@ -147,7 +147,6 @@ Page({
    *预览图片                                                           
    */
   previewImage: function (event) {
-    debugger;
     var us = event.currentTarget.dataset.imgsrcs;
     var urls = [];
     us.forEach(element => {
