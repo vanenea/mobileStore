@@ -14,7 +14,7 @@
     <view class="shop-wrap">
       <view class="shop-item" wx:for="{{like}}">
         <view data-id="{{item.id}}" bindtap='toDetail'>
-          <image mode="heightFix" class="fadeIn" src="{{baseUrl + item.images}}"></image>
+          <image mode="aspectFill" class="fadeIn" src="{{baseUrl + item.images}}"></image>
         </view>
       </view>
 

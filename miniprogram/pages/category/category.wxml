@@ -18,7 +18,7 @@
           <view class="toDetail" data-id="{{item.id}}" bindtap="toDetail">
             <image src="{{baseUrl+item.images}}"></image>
             <text>{{item.title}}</text>
-            <text class="price" style="color: #ff525e;">￥{{item.price}}</text>
+            <text wx:if="item.goodsSkus.length>0" class="price" style="color: #ff525e;">￥{{item.goodsSkus[0].price}}</text>
             <view class="clear"></view>
           </view>
         </view>
